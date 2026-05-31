@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petani Pizza | Premium Artisan Pizza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jet: '#0a0a0a',
+                        surface: '#171717',
+                        crimson: '#e11d48',
+                        'crimson-hover': '#be123c',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 25s linear infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #0a0a0a; color: #ffffff; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-crimson selection:text-white overflow-x-hidden">
+
+    <nav class="fixed w-full top-0 z-50 bg-jet/70 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                
+                <div class="flex-shrink-0 flex items-center cursor-pointer group px-2">
+                    <img 
+                        src="17284.png" 
+                        alt="Petani Pizza Logo" 
+                        class="h-20 w-auto group-hover:opacity-85 transition-opacity duration-300 ease-in-out"
+                        style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"
+                    >
+                </div>
+
+                <div class="hidden md:flex space-x-10 text-sm font-light tracking-wide text-gray-300">
+                    <a href="#menu" class="hover:text-white transition-colors duration-200">The Menu</a>
+                    <a href="#builder" class="hover:text-white transition-colors duration-200">Custom Builder</a>
+                    <a href="#story" class="hover:text-white transition-colors duration-200">Our Story</a>
+                </div>
+
+                <!-- NAV KANAN: Sudah Terhubung ke Login dan Keranjang -->
+                <div class="flex items-center space-x-6">
+                    <a href="login.html" aria-label="User Profile" class="text-gray-300 hover:text-white transition-colors duration-200 block">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </a>
+                    <a href="keranjang.html" aria-label="Shopping Cart" class="relative text-gray-300 hover:text-white transition-colors duration-200 group block">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span class="absolute -top-2 -right-2 bg-crimson text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(225,29,72,0.5)] group-hover:scale-110 transition-transform">
+                            3
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-crimson/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="flex flex-col justify-center text-center lg:text-left z-10 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95] mb-6">
+                    TASTE <br/> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson to-red-500">THE REVOLUTION.</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl font-light max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed">
+                    Seni memanggang berpadu dengan kesempurnaan. Dirakit dengan bahan premium, disajikan dengan presisi. Jangan sekadar makan, rasakan.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#menu" class="group relative px-8 py-4 bg-crimson text-white font-semibold rounded-full overflow-hidden shadow-[0_0_30px_rgba(225,29,72,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(225,29,72,0.6)] hover:-translate-y-1 w-full sm:w-auto text-center">
+                        <span class="relative z-10">Pesan Sekarang</span>
+                        <div class="absolute inset-0 bg-crimson-hover translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+                    </a>
+                    <a href="#builder" class="text-sm font-medium tracking-wide uppercase border-b border-gray-600 hover:border-white transition-colors duration-300 pb-1">
+                        Atau Rakit Pizzamu
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center items-center z-10 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <div class="absolute w-[120%] h-[120%] border border-white/5 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+                
+                <div class="relative w-72 h-72 md:w-[28rem] md:h-[28rem] rounded-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+                    <img 
+                        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                        alt="Signature Premium Pizza" 
+                        class="w-full h-full object-cover rounded-full animate-spin-slow"
+                    >
+                    <div class="absolute bottom-4 -right-4 bg-surface border border-white/10 backdrop-blur-md text-white px-6 py-3 rounded-2xl shadow-xl transform rotate-6">
+                        <p class="text-xs text-gray-400 font-light uppercase tracking-wider mb-1">Signature</p>
+                        <p class="font-bold text-lg">The Truffle Mushroom</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="menu" class="py-24 lg:py-32 relative bg-jet">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="mb-16 lg:mb-24 text-center md:text-left flex flex-col md:flex-row justify-between items-center md:items-end border-b border-white/5 pb-8">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-xs text-crimson uppercase tracking-[0.2em] font-bold mb-3">The Classics</h2>
+                    <h3 class="text-4xl md:text-5xl font-black tracking-tighter">Signature Collection.</h3>
+                </div>
+                <div>
+                    <a href="#" class="text-sm font-medium tracking-wide border-b border-gray-600 hover:border-white transition-colors duration-300 pb-1">
+                        Lihat Menu Lengkap
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 lg:gap-y-24">
+                
+                <div class="group cursor-pointer relative">
+                    <div class="relative w-full aspect-square mb-8 flex justify-center items-center">
+                        <div class="absolute w-3/4 h-3/4 bg-crimson/0 group-hover:bg-crimson/5 rounded-full blur-3xl transition-colors duration-500 z-0"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                            alt="Margherita Suprema" 
+                            class="w-4/5 h-4/5 object-cover rounded-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:rotate-3 transition-transform duration-500 ease-out z-10"
+                        >
+                        <button aria-label="Tambah Margherita" class="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-2xl font-light hover:bg-crimson hover:border-crimson hover:shadow-[0_0_20px_rgba(225,29,72,0.4)] transition-all duration-300 z-20 overflow-hidden">
+                            <span class="group-hover:hidden transition-opacity">+</span>
+                            <svg class="w-6 h-6 hidden group-hover:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-bold mb-2 group-hover:text-crimson transition-colors duration-300">Margherita Suprema</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-4 line-clamp-2">Saus tomat premium, mozzarella di bufala segar, daun basil, dan extra virgin olive oil.</p>
+                        <p class="text-xl font-bold tracking-tight">Rp 120.000</p>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer relative lg:translate-y-12">
+                    <div class="relative w-full aspect-square mb-8 flex justify-center items-center">
+                        <div class="absolute w-3/4 h-3/4 bg-crimson/0 group-hover:bg-crimson/5 rounded-full blur-3xl transition-colors duration-500 z-0"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                            alt="Meatbrawl Classic" 
+                            class="w-4/5 h-4/5 object-cover rounded-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:rotate-3 transition-transform duration-500 ease-out z-10"
+                        >
+                        <button aria-label="Tambah Meatbrawl" class="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-2xl font-light hover:bg-crimson hover:border-crimson hover:shadow-[0_0_20px_rgba(225,29,72,0.4)] transition-all duration-300 z-20 overflow-hidden">
+                            <span class="group-hover:hidden transition-opacity">+</span>
+                            <svg class="w-6 h-6 hidden group-hover:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-bold mb-2 group-hover:text-crimson transition-colors duration-300">Old Fashioned Meatbrawl</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-4 line-clamp-2">Saus marinara klasik, meatballs, bawang merah segar, dan potongan tomat Roma.</p>
+                        <p class="text-xl font-bold tracking-tight">Rp 165.000</p>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer relative">
+                    <div class="relative w-full aspect-square mb-8 flex justify-center items-center">
+                        <div class="absolute w-3/4 h-3/4 bg-crimson/0 group-hover:bg-crimson/5 rounded-full blur-3xl transition-colors duration-500 z-0"></div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                            alt="Pepper Bomb" 
+                            class="w-4/5 h-4/5 object-cover rounded-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-500 ease-out z-10"
+                        >
+                        <button aria-label="Tambah Pepper Bomb" class="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-2xl font-light hover:bg-crimson hover:border-crimson hover:shadow-[0_0_20px_rgba(225,29,72,0.4)] transition-all duration-300 z-20 overflow-hidden">
+                            <span class="group-hover:hidden transition-opacity">+</span>
+                            <svg class="w-6 h-6 hidden group-hover:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-bold mb-2 group-hover:text-crimson transition-colors duration-300">Cherry Pepper Bombshell</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-4 line-clamp-2">Salami premium, cherry peppers Peru, bayam segar, disajikan dengan pinggiran keju Asiago.</p>
+                        <p class="text-xl font-bold tracking-tight">Rp 145.000</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-surface pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <span class="text-2xl font-black tracking-tighter uppercase mb-6 inline-block">
+                        Petani<span class="text-crimson font-light">Pizza</span>
+                    </span>
+                    <p class="text-gray-400 text-sm font-light max-w-sm leading-relaxed">
+                        Mendefinisikan ulang standar artisan pizza. Dibuat dengan semangat, dikirimkan dengan presisi untuk pengalaman kuliner yang tak tertandingi.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-gray-100">Navigasi</h5>
+                    <ul class="space-y-4 text-sm font-light text-gray-400">
+                        <li><a href="#" class="hover:text-crimson transition-colors">The Menu</a></li>
+                        <li><a href="#" class="hover:text-crimson transition-colors">Custom Builder</a></li>
+                        <li><a href="#" class="hover:text-crimson transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-crimson transition-colors">Lacak Pesanan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 text-sm uppercase tracking-widest text-gray-100">Hubungi Kami</h5>
+                    <ul class="space-y-4 text-sm font-light text-gray-400">
+                        <li>hello@petanipizza.com</li>
+                        <li>+62 811 0000 0000</li>
+                        <li class="pt-4 flex space-x-4">
+                            <a href="#" class="w-8 h-8 rounded-full bg-jet flex items-center justify-center hover:bg-crimson transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-jet flex items-center justify-center hover:bg-crimson transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+                <p>&copy; 2026 Petani Pizza. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
